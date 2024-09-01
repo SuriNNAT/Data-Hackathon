@@ -20,11 +20,8 @@ This system provides an accurate record of your movements, useful for purposes s
 - Do 'npx hardhat init' in command prompt or terminal
 - Create folders "contracts", "migrations", and "test" inside the Polygon Project directory
 - Download "hardhat.config.js" in this repo and replace it with the one you have in the Polygon Project directory
-- Create a ".env" file inside the Polygon Project Directory and add these 2 lines:
+- Download a ".env" file and save it inside the Polygon Project Directory
 
-POLYGON_MAINNET_URL=https://polygon-rpc.com
-PRIVATE_KEY=your_private_key 
-
-Note: your_private_key is the private key you obtained from your own MetaMask's Polygon's network
+Note: your_private_key in the ".env" file is the private key you obtained from your own MetaMask's Polygon's network
 
 --> Try to compile the smart contracts by using "npx hardhat compile". If it's good then move on to Test and Deploy
