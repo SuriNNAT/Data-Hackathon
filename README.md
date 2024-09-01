@@ -36,7 +36,7 @@ module.exports = {
   },
 };
 
-  d. Create a ".env" file inside the Polygon Project Directory and add these 2 lines:
+d. Create a ".env" file inside the Polygon Project Directory and add these 2 lines:
 
 POLYGON_MAINNET_URL=https://polygon-rpc.com
 PRIVATE_KEY=your_private_key 
