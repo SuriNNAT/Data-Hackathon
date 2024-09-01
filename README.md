@@ -17,9 +17,9 @@ This system provides an accurate record of your movements, useful for purposes s
 - Install MetaMask extension and set up your wallet
 
 2. Set up Polygon Project directory
-   a. Do 'npx hardhat init' in command prompt or terminal
-   b. Create folders "contracts", "migrations", and "test" inside the Polygon Project directory
-   c. Open "hardhat.config".js or .ts file and add these lines:
+- Do 'npx hardhat init' in command prompt or terminal
+- Create folders "contracts", "migrations", and "test" inside the Polygon Project directory
+- Open "hardhat.config".js or .ts file and add these lines:
 
 require('@nomicfoundation/hardhat-toolbox');
 require('dotenv').config();
@@ -36,7 +36,7 @@ module.exports = {
   },
 };
 
-d. Create a ".env" file inside the Polygon Project Directory and add these 2 lines:
+- Create a ".env" file inside the Polygon Project Directory and add these 2 lines:
 
 POLYGON_MAINNET_URL=https://polygon-rpc.com
 PRIVATE_KEY=your_private_key 
