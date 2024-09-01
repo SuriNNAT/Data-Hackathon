@@ -19,23 +19,7 @@ This system provides an accurate record of your movements, useful for purposes s
 2. Set up Polygon Project directory
 - Do 'npx hardhat init' in command prompt or terminal
 - Create folders "contracts", "migrations", and "test" inside the Polygon Project directory
-- Open "hardhat.config".js or .ts file and add these lines:
-
-require('@nomicfoundation/hardhat-toolbox');
-require('dotenv').config();
-
-const { POLYGON_MAINNET_URL, PRIVATE_KEY } = process.env;
-
-module.exports = {
-  solidity: "0.8.24",
-  networks: {
-    polygon: {
-      url: POLYGON_MAINNET_URL || '',
-      accounts: PRIVATE_KEY ? [`0x${PRIVATE_KEY}`] : [],
-    },
-  },
-};
-
+- Download "hardhat.config.js" in this repo and replace it with the one you have in the Polygon Project directory
 - Create a ".env" file inside the Polygon Project Directory and add these 2 lines:
 
 POLYGON_MAINNET_URL=https://polygon-rpc.com
