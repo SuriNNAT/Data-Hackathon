@@ -1,4 +1,4 @@
-# Future-Of-Data Hackathon - Location Tracking System![image](https://github.com/user-attachments/assets/6cea572b-2bda-4306-ba03-537832725908)
+# Future-Of-Data Hackathon - Location Tracking System
 This system is designed to track and verify your location through a mobile app, checkpoints, and blockchain technology. It consists of three main components:
 - Mobile App: Functions as a digital ID or passport, allowing verification at various checkpoints. 
 - Checkpoints: Locations where you scan the app to record your arrival, such as at airports, hotels, restaurants, etc.
