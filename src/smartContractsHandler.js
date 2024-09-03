@@ -1,9 +1,9 @@
 import { ethers } from "ethers";
 
 // Replace these with your contract addresses and ABIs
-const identityContractAddress = "YOUR_IDENTITY_CONTRACT_ADDRESS";
-const locationContractAddress = "YOUR_LOCATION_CONTRACT_ADDRESS";
-const accessControlContractAddress = "YOUR_ACCESS_CONTROL_CONTRACT_ADDRESS";
+const identityContractAddress = "";
+const locationContractAddress = "";
+const accessControlContractAddress = "";
 
 const identityABI = [ {
     "inputs": [],
@@ -150,6 +150,8 @@ const accessControlABI = [
 let provider;
 let signer;
 
+provider = new ethers.providers.JsonRpcProvider("http://127.0.0.1:8545");
+signer = provider.getSigner();
 export const getIdentityContract = () => {
     return new ethers.Contract(identityContractAddress, identityABI, signer);
 };

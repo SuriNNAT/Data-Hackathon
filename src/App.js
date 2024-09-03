@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { connectWallet, getIdentityContract, getLocationContract } from "./smartContractsHandler";
+import { getLocationContract } from "./smartContractsHandler";
 
 function App() {
     const [location, setLocation] = useState("");
@@ -8,7 +8,7 @@ function App() {
     const handleLogLocation = async () => {
         const contract = getLocationContract();
         try {
-            const tx = await contract.logLocation(userId, location);
+            const tx = await contract.logLocation(location);
             await tx.wait();
             console.log("Location logged:", location);
         } catch (error) {
@@ -19,7 +19,7 @@ function App() {
     const handleViewLocations = async () => {
         const contract = getLocationContract();
         try {
-            const logs = await contract.getLocationByUser(userId);
+            const logs = await contract.getLocationByUser();
             setLocations(logs);
         } catch (error) {
             console.error("Failed to fetch locations:", error);
