@@ -5,9 +5,147 @@ const identityContractAddress = "YOUR_IDENTITY_CONTRACT_ADDRESS";
 const locationContractAddress = "YOUR_LOCATION_CONTRACT_ADDRESS";
 const accessControlContractAddress = "YOUR_ACCESS_CONTROL_CONTRACT_ADDRESS";
 
-const identityABI = [ /* ABI for IdentityManagement contract */ ];
-const locationABI = [ /* ABI for LocationLogging contract */ ];
-const accessControlABI = [ /* ABI for AccessControl contract */ ];
+const identityABI = [ {
+    "inputs": [],
+    "name": "getUser",
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "publicKey",
+        "type": "string"
+      }
+    ],
+    "name": "registerUser",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      }
+    ],
+    "name": "verifyUser",
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  } ];
+const locationABI = [ {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      }
+    ],
+    "name": "getLocationByUser",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "place",
+            "type": "string"
+          },
+          {
+            "internalType": "uint256",
+            "name": "timestamp",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct LocationLogging.Location[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "place",
+        "type": "string"
+      }
+    ],
+    "name": "logLocation",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  } ];
+const accessControlABI = [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "owner",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        }
+      ],
+      "name": "checkAccess",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        }
+      ],
+      "name": "grantAccess",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        }
+      ],
+      "name": "revokeAccess",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ] ;
 
 let provider;
 let signer;
