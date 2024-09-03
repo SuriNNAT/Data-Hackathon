@@ -1,12 +1,9 @@
 async function main() {
-    const [deployer] = await ethers.getSigners();
-    console.log("Deploying contracts with the account:", deployer.address);
+  const AccessControl = await ethers.getContractFactory("AccessControl");
+  const accessControl = await AccessControl.deploy();
+  await accessControl.deployed();
 
-    const AccessControl = await ethers.getContractFactory("AccessControl");
-    const accessControl = await AccessControl.deploy();
-    await accessControl.deployed();
-
-    console.log("AccessControl deployed to address:", accessControl.address);
+  console.log("AccessControl deployed to address:", accessControl.address);
 }
 
 main()
