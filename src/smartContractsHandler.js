@@ -150,21 +150,6 @@ const accessControlABI = [
 let provider;
 let signer;
 
-export const connectWallet = async () => {
-    if (window.ethereum) {
-        try {
-            await window.ethereum.request({ method: "eth_requestAccounts" });
-            provider = new ethers.providers.Web3Provider(window.ethereum);
-            signer = provider.getSigner();
-            console.log("Connected");
-        } catch (error) {
-            console.error("Error connecting to wallet:", error);
-        }
-    } else {
-        console.error("Metamask not detected");
-    }
-};
-
 export const getIdentityContract = () => {
     return new ethers.Contract(identityContractAddress, identityABI, signer);
 };
